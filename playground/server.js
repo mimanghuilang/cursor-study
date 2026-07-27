@@ -46,7 +46,7 @@ app.get("/api/todos", (_req, res) => {
 app.post("/api/todos", (req, res) => {
   const title = String(req.body?.title || "").trim();
   if (!title) {
-    return res.status(400).json({ error: "title is required" });
+    return res.status(400).json({ error: "标题不能为空" });
   }
 
   const todos = readTodos();
@@ -55,6 +55,7 @@ app.post("/api/todos", (req, res) => {
     title,
     done: false,
     createdAt: new Date().toISOString(),
+    tags: []
   };
   todos.push(todo);
   writeTodos(todos);
@@ -65,14 +66,14 @@ app.patch("/api/todos/:id", (req, res) => {
   const todos = readTodos();
   const index = todos.findIndex((t) => t.id === req.params.id);
   if (index === -1) {
-    return res.status(404).json({ error: "not found" });
+    return res.status(404).json({ error: "未找到该待办" });
   }
 
   const current = todos[index];
   if (typeof req.body?.title === "string") {
     const title = req.body.title.trim();
     if (!title) {
-      return res.status(400).json({ error: "title cannot be empty" });
+      return res.status(400).json({ error: "标题不能为空" });
     }
     current.title = title;
   }
@@ -94,7 +95,7 @@ app.delete("/api/todos/:id", (req, res) => {
   const todos = readTodos();
   const next = todos.filter((t) => t.id !== req.params.id);
   if (next.length === todos.length) {
-    return res.status(404).json({ error: "not found" });
+    return res.status(404).json({ error: "未找到该待办" });
   }
   writeTodos(next);
   res.status(204).end();
@@ -102,5 +103,5 @@ app.delete("/api/todos/:id", (req, res) => {
 
 app.listen(PORT, () => {
   ensureDataFile();
-  console.log(`Playground Todo listening on http://localhost:${PORT}`);
+  console.log(`待办练习台已启动：http://localhost:${PORT}`);
 });

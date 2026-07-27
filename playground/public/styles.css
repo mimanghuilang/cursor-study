@@ -110,6 +110,7 @@ h1 {
   gap: 0.5rem;
 }
 
+/** Start of Selection */
 .todo-item {
   display: flex;
   align-items: center;
@@ -118,7 +119,14 @@ h1 {
   border: 1px solid var(--border);
   border-radius: 10px;
   background: color-mix(in srgb, var(--panel) 92%, transparent);
+  transition: transform 0.15s ease, border-color 0.15s ease;
 }
+
+.todo-item:hover {
+  transform: translateY(-1px);
+  border-color: var(--muted);
+}
+/** End of Selection */
 
 .todo-item.done .todo-title {
   text-decoration: line-through;

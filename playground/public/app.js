@@ -30,7 +30,7 @@ async function api(path, options) {
 function renderTodos(todos) {
   listEl.innerHTML = "";
   if (!todos.length) {
-    setStatus("No todos yet — add one above.", "");
+    setStatus("暂无待办 — 在上方添加一条吧。", "");
     return;
   }
 
@@ -41,7 +41,7 @@ function renderTodos(todos) {
 
     const toggle = document.createElement("button");
     toggle.type = "button";
-    toggle.textContent = todo.done ? "Undo" : "Done";
+    toggle.textContent = todo.done ? "撤销" : "完成";
     toggle.addEventListener("click", () => toggleTodo(todo));
 
     const title = document.createElement("span");
@@ -51,20 +51,29 @@ function renderTodos(todos) {
     const del = document.createElement("button");
     del.type = "button";
     del.className = "delete";
-    del.textContent = "Delete";
+    del.textContent = "删除";
     del.addEventListener("click", () => deleteTodo(todo.id));
 
-    li.append(toggle, title, del);
+    li.append(toggle, title);
+
+    if (todo.done && todo.createdAt) {
+      const created = document.createElement("span");
+      created.className = "todo-created-at";
+      created.textContent = todo.createdAt;
+      li.append(created);
+    }
+
+    li.append(del);
     listEl.appendChild(li);
   }
 }
 
 async function loadTodos() {
-  setStatus("Loading…");
+  setStatus("加载中…");
   try {
     const todos = await api("/api/todos");
     renderTodos(todos);
-    setStatus(`${todos.length} todo(s)`, "ok");
+    setStatus(`共 ${todos.length} 条待办`, "ok");
   } catch (err) {
     setStatus(err.message, "error");
   }

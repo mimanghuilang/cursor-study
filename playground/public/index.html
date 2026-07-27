@@ -3,27 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cursor Study · Todo Playground</title>
+    <title>Cursor 学习 · 待办练习台</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <main class="app">
       <header class="header">
         <p class="brand">cursor-study</p>
-        <h1>Todo Playground</h1>
-        <p class="lede">Minimal app for practicing Cursor Tab, Debug, Browser, and more.</p>
+        <h1>待办练习台</h1>
+        <p class="lede">用于练习 Cursor Tab、Debug、Browser 等功能的极简待办应用。</p>
       </header>
 
       <form id="todo-form" class="todo-form" autocomplete="off">
-        <label class="sr-only" for="todo-input">New todo</label>
+        <label class="sr-only" for="todo-input">新建待办</label>
         <input
           id="todo-input"
           name="title"
           type="text"
-          placeholder="Add a todo…"
+          placeholder="添加一条待办…"
           required
         />
-        <button type="submit">Add</button>
+        <button type="submit">添加</button>
       </form>
 
       <p id="status" class="status" role="status" aria-live="polite"></p>
