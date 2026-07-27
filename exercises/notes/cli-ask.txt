@@ -1,0 +1,15 @@
+# M7 Task B — playground 只读问答
+
+方式: IDE Ask 替代（CLI agent 子命令本机未真正可用）
+问题: playground 的 HTTP 端口和 todos 数据文件路径是什么？
+
+## 回答
+
+- HTTP 端口: **3847**（`playground/server.js` 中 `process.env.PORT || 3847`）
+- Todos 数据文件: **`playground/data/todos.json`**（相对仓库根；代码里 `DATA_FILE = path.join(__dirname, "data", "todos.json")`）
+
+## CLI vs IDE Agent（口头要点）
+
+- IDE Agent：可交互审批、看 Diff、用 Browser/MCP，适合日常开发
+- CLI headless：适合脚本/CI、无 UI；审批策略要预先配置，否则易挂起
+- 云端 Cloud Agent：笔记本可合上继续跑（本账号 M6 无权限）

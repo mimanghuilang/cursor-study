@@ -33,14 +33,14 @@ M1 行内编辑与上下文 → M2 Debug / Diff / Review
 
 ## 进度
 
-- [ ] **M1** 行内编辑与上下文 — [docs](docs/01-inline-context.md) · [练习](exercises/01-inline-context.md)
-- [ ] **M2** Debug、Diff、Review — [docs](docs/02-debug-review.md) · [练习](exercises/02-debug-review.md)
-- [ ] **M3** Agents Window 与并行 — [docs](docs/03-agents-window.md) · [练习](exercises/03-agents-window.md)
-- [ ] **M4** Browser、Design Mode、Canvas — [docs](docs/04-browser-canvas.md) · [练习](exercises/04-browser-canvas.md)
-- [ ] **M5** MCP、Hooks、Plugins — [docs](docs/05-mcp-hooks.md) · [练习](exercises/05-mcp-hooks.md)
-- [ ] **M6** Cloud、Automations、Bugbot — [docs](docs/06-cloud-bugbot.md) · [练习](exercises/06-cloud-bugbot.md)
-- [ ] **M7** CLI 与 SDK — [docs](docs/07-cli-sdk.md) · [练习](exercises/07-cli-sdk.md)
-- [ ] **M8** 模型与工作流 — [docs](docs/08-workflow.md) · [练习](exercises/08-workflow.md)
+- [x] **M1** 行内编辑与上下文 — [docs](docs/01-inline-context.md) · [练习](exercises/01-inline-context.md)
+- [x] **M2** Debug、Diff、Review — [docs](docs/02-debug-review.md) · [练习](exercises/02-debug-review.md)
+- [x] **M3** Agents Window 与并行 — [docs](docs/03-agents-window.md) · [练习](exercises/03-agents-window.md)
+- [x] **M4** Browser、Design Mode、Canvas — [docs](docs/04-browser-canvas.md) · [练习](exercises/04-browser-canvas.md)
+- [x] **M5** MCP、Hooks、Plugins — [docs](docs/05-mcp-hooks.md) · [练习](exercises/05-mcp-hooks.md)
+- [x] **M6** Cloud、Automations、Bugbot — [docs](docs/06-cloud-bugbot.md) · [练习](exercises/06-cloud-bugbot.md)
+- [ ] **M7** CLI 与 SDK — [docs](docs/07-cli-sdk.md) · [练习](exercises/07-cli-sdk.md)（已跳过；A/B 有探测笔记）
+- [ ] **M8** 模型与工作流 — [docs](docs/08-workflow.md) · [练习](exercises/08-workflow.md)（进行中）
 
 ### 复习可选（你已会）
 

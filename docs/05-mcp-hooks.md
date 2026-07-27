@@ -32,7 +32,7 @@
 
 常见事件：`sessionStart/End`、`preToolUse`、`beforeShellExecution`、`afterFileEdit`、`beforeMCPExecution`、`beforeSubmitPrompt` 等。
 
-返回 JSON 控制 `permission: allow|deny|ask`。Windows 下用 **Node 脚本** 比 bash 更省事。
+返回 JSON 控制 `permission: allow|deny|ask`。Windows 下用 **Node 脚本** 比 bash 更省事；`hooks.json` 里命令建议加 `cmd /c` 前缀，脚本解析 stdin 前去掉 UTF-8 BOM。
 
 ## Customize / Plugins
 

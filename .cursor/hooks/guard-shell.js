@@ -1,19 +1,43 @@
 #!/usr/bin/env node
 /**
  * beforeShellExecution: block obviously destructive rm -rf style commands.
- * Reads JSON from stdin, writes JSON permission to stdout.
+ * Strips UTF-8 BOM (common on Windows Cursor hooks) before JSON.parse.
  */
-const fs = require("fs");
+function readStdin(timeoutMs) {
+  return new Promise((resolve) => {
+    let raw = "";
+    let settled = false;
+    const done = () => {
+      if (settled) return;
+      settled = true;
+      resolve(raw);
+    };
 
-let raw = "";
-process.stdin.setEncoding("utf8");
-process.stdin.on("data", (chunk) => {
-  raw += chunk;
-});
-process.stdin.on("end", () => {
+    const timer = setTimeout(done, timeoutMs);
+    process.stdin.setEncoding("utf8");
+    process.stdin.on("data", (chunk) => {
+      raw += chunk;
+    });
+    process.stdin.on("end", () => {
+      clearTimeout(timer);
+      done();
+    });
+    process.stdin.on("error", () => {
+      clearTimeout(timer);
+      done();
+    });
+    process.stdin.resume();
+  });
+}
+
+function stripBom(text) {
+  return String(text || "").replace(/^\uFEFF/, "");
+}
+
+readStdin(1500).then((raw) => {
   let input = {};
   try {
-    input = JSON.parse(raw || "{}");
+    input = JSON.parse(stripBom(raw) || "{}");
   } catch {
     input = {};
   }
@@ -35,6 +59,7 @@ process.stdin.on("end", () => {
       })
     );
     process.exit(0);
+    return;
   }
 
   process.stdout.write(JSON.stringify({ permission: "allow" }));
