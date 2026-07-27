@@ -1,0 +1,31 @@
+---
+description: Commit / Push / 提测前检查清单（Wiki）
+alwaysApply: false
+---
+
+# Commit / Push / 提测检查
+
+Source: http://wiki.up366.com:8090/pages/viewpage.action?pageId=69895713  
+父页：http://wiki.up366.com:8090/pages/viewpage.action?pageId=78790530
+
+在用户要求提交、推送或协助提测时，主动核对：
+
+## Commit 前
+
+- 少量多次；每次针对一个具体问题
+- msg 可读，改动不超出 msg 范围
+- 自审：无多余文件、无漏改、分支正确
+- 修 bug 时简要复盘原因与防再发
+
+## Push 前
+
+- 提交记录均属本次任务
+- 分支安全（无冲突中的提测占用）
+- 新分支应由负责人创建（提醒用户）
+
+## 提测前
+
+- 确认提测分支与相关 commit 范围
+- 关联系统发布顺序是否说清
+- 提测说明/影响面是否写全
+- 功能点已自测、边界已覆盖

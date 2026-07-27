@@ -1,0 +1,17 @@
+---
+description: 发布前配置检查（Wiki）
+alwaysApply: false
+---
+
+# 发布前配置检查
+
+Source: http://wiki.up366.com:8090/pages/viewpage.action?pageId=78796620
+
+协助发布或检查上线配置时逐项确认：
+
+1. 新增 API 是否在 test / demo / product 环境区分正确
+2. 是否有写死 `platform` 的请求
+3. 打包分支与 commit 是否正确；有无合并多余/未提测分支
+4. 目录包请求域名须为生产域名，不得带 test/demo
+5. 依赖系统与发布顺序是否写全并已同步测试
+6. 内网访问项目的 API **不能**使用 https

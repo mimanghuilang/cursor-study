@@ -1,0 +1,23 @@
+---
+description: 前端技术栈锁定（来自 Wiki 前端团队研发规范）
+globs: "**/*.{vue,ts,tsx,js,jsx,scss,css,json}"
+alwaysApply: false
+---
+
+# 前端技术栈
+
+Source: http://wiki.up366.com:8090/pages/viewpage.action?pageId=78790530
+
+生成或改造前端项目时默认使用：
+
+- 引擎：Node >= 22
+- 包管理：pnpm >= 10（不要默认改成 npm/yarn，除非仓库已固定）
+- 构建：Vite >= 7
+- 框架：Vue >= 3（优先 Composition API + `<script setup lang="ts">`）
+- 语言：TypeScript >= 5
+- 样式：SCSS
+- 状态：Pinia
+- 路由：Vue Router
+- UI：按项目选择（自研组件库 / Element Plus / Vant）
+
+不要引入与上述栈冲突的平行方案（例如无必要的 React、Vuex 替代 Pinia），除非用户明确要求。

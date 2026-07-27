@@ -1,0 +1,34 @@
+---
+description: CSS/SCSS 编码规范（Wiki §3.3）
+globs: "**/*.{scss,css,vue}"
+alwaysApply: false
+---
+
+# CSS/SCSS 规范
+
+Source: http://wiki.up366.com:8090/pages/viewpage.action?pageId=78790530
+
+## 命名
+
+使用 BEM：`block__element--modifier`（参考 https://getbem.com/）。
+
+```scss
+.user-card {
+  &__header { &--collapsed { } }
+  &--highlighted { }
+}
+```
+
+## 体积与嵌套
+
+- 单文件建议 ≤200 行，上限 500；过大按功能拆分 `@import`
+- 选择器嵌套不超过 3 层
+
+## 属性顺序（建议）
+
+定位 → 显示 → 盒模型 → flex/grid → 排版 → 视觉 → 动画 → 其他
+
+## 注释
+
+- 大区块用分隔注释；文件头可写 `@file` / `@description`
+- 组件内样式优先 `scoped`，避免污染全局

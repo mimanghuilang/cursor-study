@@ -1,0 +1,15 @@
+---
+description: SCRUM 填写要求（流程；讨论排期/任务时参考）
+alwaysApply: false
+---
+
+# SCRUM 填写要求
+
+Source: http://wiki.up366.com:8090/pages/viewpage.action?pageId=82024337
+
+当用户讨论排期、任务拆分或 Wiki SCRUM 时遵循：
+
+1. 除纯修 bug 外，新增需求都要有对应 SCRUM 表（改动再小也要）
+2. 负责人：项目都在表里、有负责人、计划清晰并推进
+3. 开发：事项都有记录；需求/方案确认后当天或最迟次日填工时与预计完成时间；无法评估须备注原因；联调对象与计划在估时前谈清
+4. 全员每日更新进度

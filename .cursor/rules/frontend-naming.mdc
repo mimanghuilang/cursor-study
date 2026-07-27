@@ -1,0 +1,34 @@
+---
+description: 前端目录与文件命名（Wiki 研发规范 §2）
+globs: "**/*.{vue,ts,tsx,js,jsx,scss,css}"
+alwaysApply: false
+---
+
+# 命名与目录
+
+Source: http://wiki.up366.com:8090/pages/viewpage.action?pageId=78790530
+
+## 大小写
+
+- PascalCase：Vue 组件、类、接口、类型
+- camelCase：变量、函数、方法、实例
+- kebab-case：普通文件名、文件夹名、CSS 类名、HTML 属性
+- UPPER_SNAKE_CASE：常量
+
+## 目录（优先沿用仓库已有结构）
+
+常见 `src/` 划分：`assets/`、`components/`、`views/`（或 `pages/`）、`layouts/`、`router/`、`store/`（或 `stores/`）、`utils/`、`api/`（或 `services/`）、`hooks/`（或 `composables/`）、`types/`（或 `models/`）、`styles/`
+
+组件分类：
+
+- `components/base/` → `BaseButton.vue` 等基础组件
+- `components/business/` 或 `features/` → 业务组件
+- `components/layout/` → 布局组件
+- 页面放 `views/` 或 `pages/`，按业务分子目录
+
+## 文件
+
+- Vue SFC：`UserProfile.vue`（PascalCase，与组件名一致）
+- 工具/API：`date-utils.ts`、`user-api.ts`（kebab-case）
+- 测试：`__tests__/UserProfile.spec.ts`
+- 避免单单词组件名（易与 HTML 标签冲突）；可复用组件用 `Base`/`App` 前缀

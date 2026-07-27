@@ -1,0 +1,31 @@
+---
+description: 代码注释规范摘要（Wiki JSDoc / 注释规范）
+globs: "**/*.{vue,ts,tsx,js,jsx,scss}"
+alwaysApply: false
+---
+
+# 注释规范
+
+Source: http://wiki.up366.com:8090/pages/viewpage.action?pageId=78790530  
+子页注释规范：pageId=91070203 · JSDoc https://www.jsdoc.com.cn/
+
+## 原则
+
+- 清晰描述意图；代码变更同步更新注释
+- 不注释显而易见逻辑；格式统一
+- 项目 README 必维护；组件/业务文档放 `docs/`
+
+## 何时写
+
+- 复杂业务、公共组件/工具、API 参数与错误、关键配置常量
+
+## 何时不写
+
+- 简单 getter/setter
+- 临时调试：应删除；或用 env 包裹 / TODO 标记，禁止把调试代码带到线上
+
+## 形式
+
+- 组件：文件头 `@component` / `@description`（或等价 JSDoc）
+- 函数：`@param` `@returns` `@throws` `@example`
+- 变量：非自解释常量旁加一行说明

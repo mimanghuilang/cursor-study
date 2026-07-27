@@ -1,0 +1,34 @@
+---
+description: Vue 3 + TS 组件编写规范（Wiki §3.1）
+globs: "**/*.vue"
+alwaysApply: false
+---
+
+# Vue 组件规范
+
+Source: http://wiki.up366.com:8090/pages/viewpage.action?pageId=78790530
+
+## 结构
+
+顺序：`template` → `script setup lang="ts"` → `style scoped lang="scss"`。
+
+`<script setup>` 建议顺序：导入 → 类型 → props/emits → 响应式 → computed → 生命周期 → 方法 → `defineExpose`。
+
+## 质量门槛
+
+- 优秀：≤300 行；良好：300–500；警告：500–1000；>1000 必须拆分
+- 超过约 300 行应考虑拆子组件或抽 hooks
+
+## 模板
+
+- 复杂条件/表达式放到 `computed` 或方法，不要堆在模板
+- `v-if` 嵌套不超过 3 层；复杂列表拆子组件
+- Props：类型明确；可选给默认值；复杂对象用 interface + `withDefaults`
+- 声明用 camelCase，模板属性/事件监听用 kebab-case
+- 样式：`scoped` + SCSS，BEM（`block__element--modifier`）
+
+## 拆分
+
+- 主组件只协调数据流；复杂逻辑进 `hooks/useXxx.ts`
+- 遵循单一职责；优先 Composition API
+- 参考：https://vuejs.org/style-guide/

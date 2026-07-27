@@ -1,0 +1,27 @@
+---
+description: Git 分支与提交规范（Wiki 前端研发规范 §5）
+alwaysApply: true
+---
+
+# Git 分支与提交
+
+Source: http://wiki.up366.com:8090/pages/viewpage.action?pageId=78790530  
+子页：分支管理 pageId=78798154；提交规范 pageId=43843828
+
+## 分支
+
+- **禁止**直接向 `dev` / `master`（或 `main`）提交 commit；二者只接受合并
+- `master`：与线上一致；发布后由负责人合并发布分支并 push
+- `dev`：提测分支；仅负责人合并/push；原则上提测 `dev`
+- 特性在独立 feature 分支开发与修 bug；合并到 `dev` 由项目管理员执行
+- 新建分支原则上由项目负责人创建
+
+## Commit subject 前缀（团队约定）
+
+1. `【解决Bug】`：`#JIRA-ID#` 简介（链接放正文）
+2. `【新增功能】` / `【修改功能】` / `【删除功能】`
+3. `【配置修改】` / `【增加依赖】` / `【删除依赖】`
+4. `【其它修改】`
+
+也可兼容约定式提交：https://www.conventionalcommits.org/zh-hans/v1.0.0/  
+消息须可读；一次提交只覆盖 msg 所述范围。

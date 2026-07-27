@@ -1,0 +1,36 @@
+---
+description: JavaScript/TypeScript 编码规范（Wiki §3.2）
+globs: "**/*.{ts,tsx,js,jsx}"
+alwaysApply: false
+---
+
+# JS/TS 规范
+
+Source: http://wiki.up366.com:8090/pages/viewpage.action?pageId=78790530
+
+## 命名
+
+- 变量/函数：camelCase（`getUserInfo`、`isLoading`）
+- 类/接口/类型/枚举：PascalCase
+- 常量：UPPER_SNAKE_CASE
+- 类/组件文件可用 PascalCase；普通模块/配置用 kebab-case
+
+## 导入顺序
+
+1. 第三方库  
+2. 项目别名模块（如 `@/`）  
+3. 相对路径  
+4. 样式  
+
+## 类型
+
+- 对象形状优先 `interface`；联合/工具类型用 `type`
+- 避免无必要的 `any`；函数标注参数与返回值
+- 禁止魔法数字/字符串 → 常量或枚举
+
+## 结构与注释
+
+- 函数单一职责；先校验参数再主逻辑，错误要明确抛出/记录
+- 公共 API、核心业务、复杂逻辑用 JSDoc（`@param` `@returns` `@throws`）
+- 显而易见的代码不写废话注释；改代码同步改注释
+- JSDoc：https://www.jsdoc.com.cn/
