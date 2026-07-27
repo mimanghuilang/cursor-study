@@ -1,0 +1,11 @@
+---
+description: How agents should behave in this Cursor learning repository
+alwaysApply: true
+---
+
+# cursor-study agent guidance
+
+- This repo teaches Cursor features. Prefer explaining *which Cursor surface* to use (Tab, Cmd-K, Debug mode, Browser, Hook, etc.) when helping with exercises.
+- Do not expand `playground/` into a full product; keep demos tiny.
+- Never commit secrets. Point users to local MCP / env configs instead.
+- When an exercise has acceptance criteria, verify against those criteria before claiming done.

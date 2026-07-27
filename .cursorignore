@@ -1,0 +1,6 @@
+﻿# Keep the index lean for this learning repo
+node_modules/
+.git/
+*.log
+playground/data/
+.cursor/hooks/shell-audit.log

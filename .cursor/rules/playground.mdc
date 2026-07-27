@@ -1,0 +1,13 @@
+---
+description: Conventions for the playground Todo app used in Cursor learning exercises
+globs: playground/**
+alwaysApply: false
+---
+
+# Playground conventions
+
+- Keep the Todo demo minimal: one Express API + static HTML/CSS/JS frontend.
+- Prefer small, readable changes over refactors when completing exercises.
+- Do not add frameworks (React, Vue, etc.) unless an exercise explicitly asks.
+- API lives under `/api/todos`. Persist to `playground/data/todos.json`.
+- When fixing bugs for Debug exercises, leave a short comment explaining the root cause.

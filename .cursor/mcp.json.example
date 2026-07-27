@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "tapd": {
+      "comment": "Copy to ~/.cursor/mcp.json or project .cursor/mcp.json. Use your real TAPD MCP config — this is a placeholder shape only.",
+      "url": "https://example.invalid/mcp/tapd"
+    },
+    "yapi": {
+      "comment": "Replace with your YApi MCP server config",
+      "command": "npx",
+      "args": ["-y", "example-yapi-mcp"]
+    },
+    "whistle": {
+      "comment": "Replace with your Whistle MCP server config",
+      "command": "npx",
+      "args": ["-y", "example-whistle-mcp"]
+    }
+  }
+}
