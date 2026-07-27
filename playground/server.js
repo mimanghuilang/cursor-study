@@ -78,12 +78,9 @@ app.patch("/api/todos/:id", (req, res) => {
     current.title = title;
   }
 
-  // INTENTIONAL BUG for M2 Debug exercise:
-  // toggling done uses loose equality against the string "true",
-  // so boolean true from JSON never matches and done never flips.
-  // Fix during exercises/02-debug-review.md (remove this branch logic).
+  // Root cause: `done == "true"` never matches JSON boolean true, so done stayed false.
   if ("done" in (req.body || {})) {
-    current.done = req.body.done == "true";
+    current.done = Boolean(req.body.done);
   }
 
   todos[index] = current;
